@@ -4,5 +4,7 @@ import os, sys
 # print ("Number of arguments: ", len(sys.argv))
 # print ("The arguments are: " , str(sys.argv))
 
+#hola 
+
 log = sys.argv[1]+": "+sys.argv[2]
 print(log)

@@ -1,0 +1,107 @@
+sudo apt-get -y install autoconf automake libass-dev libfreetype6-dev \
+  libsdl2-dev libtheora-dev libtool libva-dev libvdpau-dev libvorbis-dev libxcb1-dev libxcb-shm0-dev \
+  libxcb-xfixes0-dev pkg-config texinfo zlib1g-dev
+
+
+sudo apt-get install libreadline-gplv2-dev libncursesw5-dev libssl-dev libsqlite3-dev tk-dev libgdbm-dev libc6-dev libbz2-dev
+
+---------------------------------------- FTP Server -----------------------
+
+view Log
+sudo cat /var/log/vsftpd.log
+
+Reiniciar FTP Service
+sudo service vsftpd restart
+
+
+Check ftp up
+ps -aux | grep vsftpd
+
+Check Incoming connections
+sudo netstat -ntaulp | grep vsftpd
+
+Add users
+sudo adduser ftp1user
+
+----------------------
+  users     |  pass
+----------------------
+ftp1          ftp01
+
+
+
+
+
+--------------------------------------- ffmpeg ------------------------------------------
+
+sudo apt-get -y install autoconf automake libass-dev libfreetype6-dev libsdl2-dev libtheora-dev libtool libva-dev libvdpau-dev libvorbis-dev libxcb1-dev libxcb-shm0-dev libxcb-xfixes0-dev pkg-config texinfo zlib1g-dev
+
+mkdir ~/ffmpeg_sources
+
+sudo apt-get install yasm
+
+sudo apt-get install libx264-dev
+sudo apt-get install libx265-dev
+sudo apt-get install libfdk-aac-dev
+sudo apt-get install libmp3lame-dev
+sudo apt-get install libopus-dev
+sudo apt-get install libvpx-dev
+
+
+
+PKG_CONFIG_PATH=/root/LIB/lib/pkgconfig ./configure --pkg-config-flags="--static"
+
+cd ~/ffmpeg_sources
+wget http://ffmpeg.org/releases/ffmpeg-snapshot.tar.bz2
+tar xjvf ffmpeg-snapshot.tar.bz2
+cd ffmpeg
+PATH="$HOME/bin:$PATH" PKG_CONFIG_PATH="$HOME/ffmpeg_build/lib/pkgconfig" ./configure \
+  --prefix="$HOME/ffmpeg_build" \
+  --pkg-config-flags="--static" \
+  --extra-cflags="-I$HOME/ffmpeg_build/include" \
+  --extra-ldflags="-L$HOME/ffmpeg_build/lib" \
+  --bindir="$HOME/bin" \
+  --enable-gpl \
+  --enable-libass \
+  --enable-libfdk-aac \
+  --enable-libfreetype \
+  --enable-libmp3lame \
+  --enable-libopus \
+  --enable-libtheora \
+  --enable-libvorbis \
+  --enable-libvpx \
+  --enable-libx264 \
+  --enable-libx265 \
+  --enable-nonfree \
+  --enable-libxavs \
+  --enable-libxvid \
+  --enable-lzma \
+  --enable-decklink \
+  --enable-zlib \
+  --pkg-config-flags="--static"
+PATH="$HOME/bin:$PATH" make
+make install
+hash -r
+
+
+PATH="$HOME/bin:$PATH" PKG_CONFIG_PATH="$HOME/ffmpeg_build/lib/pkgconfig" ./configure \
+  --prefix="$HOME/ffmpeg_build" \
+  --pkg-config-flags="--static" \
+  --extra-cflags="-I$HOME/ffmpeg_build/include" \
+  --extra-ldflags="-L$HOME/ffmpeg_build/lib" \
+  --bindir="$HOME/bin" \
+  --enable-gpl \
+  --enable-libass \
+  --enable-libfdk-aac \
+  --enable-libfreetype \
+  --enable-libmp3lame \
+  --enable-libopus \
+  --enable-libtheora \
+  --enable-libvorbis \
+  --enable-libvpx \
+  --enable-libx264 \
+  --enable-nonfree \
+  --enable-lzma \
+  --enable-decklink \
+  --enable-zlib \
+  --enable-x11grab

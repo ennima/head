@@ -1,0 +1,92 @@
+{
+  "filesystems": [
+    {
+      "filesystem": {
+        "mount_point": "/dev", 
+        "name": "udev", 
+        "size": "6124124", 
+        "used": "0"
+      }
+    }, 
+    {
+      "filesystem": {
+        "mount_point": "/run", 
+        "name": "tmpfs", 
+        "size": "1229240", 
+        "used": "9472"
+      }
+    }, 
+    {
+      "filesystem": {
+        "mount_point": "/", 
+        "name": "/dev/mapper/summit1b--vg-root", 
+        "size": "102358344", 
+        "used": "9561420"
+      }
+    }, 
+    {
+      "filesystem": {
+        "mount_point": "/dev/shm", 
+        "name": "tmpfs", 
+        "size": "6146188", 
+        "used": "8"
+      }
+    }, 
+    {
+      "filesystem": {
+        "mount_point": "/run/lock", 
+        "name": "tmpfs", 
+        "size": "5120", 
+        "used": "0"
+      }
+    }, 
+    {
+      "filesystem": {
+        "mount_point": "/sys/fs/cgroup", 
+        "name": "tmpfs", 
+        "size": "6146188", 
+        "used": "0"
+      }
+    }, 
+    {
+      "filesystem": {
+        "mount_point": "/boot", 
+        "name": "/dev/sda1", 
+        "size": "482922", 
+        "used": "222348"
+      }
+    }, 
+    {
+      "filesystem": {
+        "mount_point": "/run/user/1000", 
+        "name": "tmpfs", 
+        "size": "1229240", 
+        "used": "16"
+      }
+    }, 
+    {
+      "filesystem": {
+        "mount_point": "/media/gvadmin/DATAPART1", 
+        "name": "/dev/sdd1", 
+        "size": "1953512444", 
+        "used": "239588"
+      }
+    }, 
+    {
+      "filesystem": {
+        "mount_point": "/media/gvadmin/vol_raid_2tb", 
+        "name": "/dev/sdc1", 
+        "size": "1953512000", 
+        "used": "148464"
+      }
+    }, 
+    {
+      "filesystem": {
+        "mount_point": "/run/user/111", 
+        "name": "tmpfs", 
+        "size": "1229240", 
+        "used": "0"
+      }
+    }
+  ]
+}
